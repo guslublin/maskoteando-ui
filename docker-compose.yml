@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: ./maskoteando-ui
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./maskoteando-ui:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  backend:
+    build:
+      context: ./maskoteando-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./maskoteando-api:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Volumen persistente
+    environment:
+      POSTGRES_DB: maskoteandodb
+      POSTGRES_USER: maskoteandouser
+      POSTGRES_PASSWORD: maskoteandopass
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:  # Declaración del volumen
