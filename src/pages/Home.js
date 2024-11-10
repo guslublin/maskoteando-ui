@@ -6,6 +6,9 @@ import { toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+import logo from '../assets/img/logo-maskoteando.png'; // Asegúrate de que la ruta del logo sea correcta
+
+
 const Home = () => {
 
   const navigate = useNavigate();
@@ -30,39 +33,9 @@ const Home = () => {
   }
 
   return (
-    <div>
-      <div className="container">
-        
-        <h1 className="text-center">Bienvenido al módulo Home</h1>
-
-        <br></br>
-        <br></br>
-
-        <button className="btn btn-success" onClick={ir_modulo_productos}>
-          Productos
-        </button>
-        <br></br>
-        <br></br>
-
-        <button className="btn btn-primary" onClick={ir_modulo_mascotas}>
-          Mascotas
-        </button>
-
-        <br></br>
-        <br></br>
-
-        <button className="btn btn-info" onClick={ir_modulo_clientes}>
-          Clientes
-        </button>
-        
-        <br></br>
-        <br></br>
-
-        <button className="btn btn-warning" onClick={notify}>
-          Notificación
-        </button>
-
-      </div>
+    <div className="d-flex flex-column align-items-center vh-100 mt-4">
+      <h1 className="text-center mb-4 mt-4">Bienvenido al sistema</h1>
+      <div className='mt-4'><img src={logo} alt="Maskoteando Logo" style={{ width: '350px', borderRadius: '10px' }} /></div>
     </div>
   );
 };

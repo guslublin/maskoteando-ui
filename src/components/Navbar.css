@@ -1,0 +1,31 @@
+/* Navbar.css */
+.navbar-custom {
+    background-color: #ffd1dc; /* Rosado claro */
+  }
+  
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
+    color: #000; /* Color de texto (ajústalo según necesites) */
+  }
+  
+  .navbar-custom .nav-link:hover {
+    color: #555; /* Color de texto al pasar el cursor */
+  }
+  
+  .btn-paw {
+    background-color: #ff8c00; /* Ambar oscuro */
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-paw:hover {
+    background-color: #e67e00; /* Ambar más oscuro en hover */
+  }
+
+  .navbar-logo {
+    width: 100%;            /* Ajusta la imagen al ancho de su contenedor */
+    max-height: 50px;       /* Ajusta este valor según la altura que prefieras */
+    border-radius: 10px;    /* Redondea las esquinas, ajusta el valor a tu gusto */
+    object-fit: cover;      /* Escala la imagen para cubrir el contenedor sin distorsionarse */
+  }
+  

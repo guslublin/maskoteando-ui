@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from '../assets/img/logo-maskoteando.png'; // Asegúrate de la ruta correcta
 
 function Login({ setAccessToken }) {  // Recibe setAccessToken como prop
   const [username, setUsername] = useState('');
@@ -37,18 +38,23 @@ function Login({ setAccessToken }) {  // Recibe setAccessToken como prop
       }
     } catch (error) {
       if (error.response && error.response.data) {
-        // Si el servidor envía un mensaje de error específico, lo mostramos
         setError(error.response.data.detail || 'Error al iniciar sesión');
       } else {
-        // Si hay un error de red u otro problema, mostramos un mensaje genérico
         setError('Credenciales inválidas, intenta de nuevo');
       }
     }
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
-      <form onSubmit={handleLogin} className="p-4 border rounded shadow" style={{ width: '300px' }}>
+    <div className="d-flex flex-column justify-content-center align-items-center vh-100" style={{ backgroundColor: '#ffd1dc' }}>
+      
+      {/* Logo fuera del formulario */}
+      <div className="text-center mb-4">
+        <img src={logo} alt="Maskoteando Logo" style={{ width: '300px', borderRadius: '10px' }} />
+      </div>
+
+      {/* Formulario de inicio de sesión */}
+      <form onSubmit={handleLogin} className="p-4 border rounded shadow" style={{ width: '300px', backgroundColor: '#fff' }}>
         <h3 className="mb-3 text-center">Iniciar Sesión</h3>
         {error && <div className="alert alert-danger" role="alert">{error}</div>}
         <div className="mb-3">
@@ -73,8 +79,12 @@ function Login({ setAccessToken }) {  // Recibe setAccessToken como prop
             required 
           />
         </div>
-        <button type="submit" className="btn btn-primary w-100 mb-2">Ingresar</button>
-        <button type="button" className="btn btn-secondary w-100" onClick={() => navigate('/register')}>Registrarse</button>
+
+        {/* Botón Ingresar */}
+        <button type="submit" className="btn w-100 mb-2" style={{ backgroundColor: '#ff8c00', color: '#fff' }}>Ingresar</button>
+
+        {/* Botón Registrarse */}
+        <button type="button" className="btn w-100" style={{ backgroundColor: 'green', color: '#fff' }} onClick={() => navigate('/register')}>Registrarse</button>
       </form>
     </div>
   );

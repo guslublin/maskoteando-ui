@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
+import Configuraciones from './pages/Configuraciones';
 import Productos from './pages/Productos';
 import Mascotas from './pages/Mascotas';
 import Login from './pages/Login';
@@ -35,13 +36,12 @@ function App() {
         <ToastContainer />
         <header className="App-header">
           {accessToken && <Navbar setAccessToken={setAccessToken} />}  {/* Pasar setAccessToken como prop */}
-          <br></br>
-          <br></br>
           <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<Login setAccessToken={setAccessToken} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/home" element={accessToken ? <Home /> : <Navigate to="/login" />} />
+            <Route path="/configuraciones" element={accessToken ? <Configuraciones /> : <Navigate to="/login" />} />
             <Route path="/productos" element={accessToken ? <Productos /> : <Navigate to="/login" />} />
             <Route path="/mascotas" element={accessToken ? <Mascotas /> : <Navigate to="/login" />} />
             <Route path="/clientes" element={accessToken ? <Clientes /> : <Navigate to="/login" />} />
