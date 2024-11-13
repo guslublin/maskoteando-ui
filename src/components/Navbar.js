@@ -69,6 +69,9 @@ const Navbar = ({ setAccessToken }) => {
               <Link className="nav-link" to="/clientes" onClick={handleLinkClick}>Clientes</Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/consultas" onClick={handleLinkClick}>Consultas</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/ventas" onClick={handleLinkClick}>Ventas</Link>
             </li>
           </ul>

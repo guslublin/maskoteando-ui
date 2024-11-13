@@ -14,6 +14,7 @@ import Ventas from './pages/Ventas';
 import ListadoVentas from './pages/ListadoVentas';  // Importar componente
 import NuevaVenta from './pages/NuevaVenta';  // Importar componente
 import VerVenta from './pages/VerVenta';
+import Consultas from './pages/Consultas';
 
 function App() {
   const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token'));
@@ -50,6 +51,7 @@ function App() {
             <Route path="/ventas/listado" element={accessToken ? <ListadoVentas /> : <Navigate to="/login" />} />
             <Route path="/ventas/nueva" element={accessToken ? <NuevaVenta /> : <Navigate to="/login" />} />
             <Route path="/ventas/ver/:id" element={accessToken ? <VerVenta /> : <Navigate to="/login" />} />
+            <Route path="/consultas" element={accessToken ? <Consultas /> : <Navigate to="/login" />} />
           </Routes>
         </header>
       </div>
