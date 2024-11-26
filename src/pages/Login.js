@@ -84,7 +84,7 @@ function Login({ setAccessToken }) {  // Recibe setAccessToken como prop
         <button type="submit" className="btn w-100 mb-2" style={{ backgroundColor: '#ff8c00', color: '#fff' }}>Ingresar</button>
 
         {/* Botón Registrarse */}
-        <button type="button" className="btn w-100" style={{ backgroundColor: 'green', color: '#fff' }} onClick={() => navigate('/register')}>Registrarse</button>
+        {/* <button type="button" className="btn w-100" style={{ backgroundColor: 'green', color: '#fff' }} onClick={() => navigate('/register')}>Registrarse</button> */}
       </form>
     </div>
   );

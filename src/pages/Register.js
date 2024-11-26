@@ -37,7 +37,7 @@ function Register() {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <form onSubmit={handleRegister} className="p-4 border rounded shadow" style={{ width: '300px' }}>
-        <h3 className="mb-3 text-center">Registrarse</h3>
+        <h3 className="mb-3 text-center">Registrar usuario</h3>
         {error && <div className="alert alert-danger" role="alert">{error}</div>}
         <div className="mb-3">
           <label htmlFor="username" className="form-label">Usuario</label>
@@ -73,7 +73,7 @@ function Register() {
           />
         </div>
         <button type="submit" className="btn btn-primary w-100 mb-2">Registrarse</button>
-        <button type="button" className="btn btn-secondary w-100" onClick={() => navigate('/login')}>Volver</button>
+        {/* <button type="button" className="btn btn-secondary w-100" onClick={() => navigate('/login')}>Volver</button> */}
       </form>
     </div>
   );

@@ -10,58 +10,16 @@ const Configuraciones = () => {
 
   const navigate = useNavigate();
 
-  const ir_modulo_productos = () => {
-    navigate('/productos');
-  };
-
-  const ir_modulo_mascotas = () => {
-    navigate('/mascotas');
-  };
-
-  const ir_modulo_clientes = () => {
-    navigate('/clientes');
-  };
-
-  const notify = () => {
-    toast.success('¡Has hecho clic en el botón!', {
-      position: "top-right",  // Usa una cadena en lugar de una constante
-      autoClose: 5000,  // La notificación se cierra automáticamente después de 3 segundos
-    });
-  }
-
   return (
     <div>
-      <div className="container">
-        
-        <h1 className="text-center">Bienvenido al módulo Configuraciones</h1>
-
-        <br></br>
-        <br></br>
-
-        <button className="btn btn-success" onClick={ir_modulo_productos}>
-          Productos
+      <div className="container mt-4 text-center">
+        <h1 className="mt-4">Bienvenido al módulo de Configuraciones</h1>
+        <button
+          className="btn btn-success mt-4"
+          onClick={() => navigate('/usuarios')}
+        >
+          Usuarios
         </button>
-        <br></br>
-        <br></br>
-
-        <button className="btn btn-primary" onClick={ir_modulo_mascotas}>
-          Mascotas
-        </button>
-
-        <br></br>
-        <br></br>
-
-        <button className="btn btn-info" onClick={ir_modulo_clientes}>
-          Clientes
-        </button>
-        
-        <br></br>
-        <br></br>
-
-        <button className="btn btn-warning" onClick={notify}>
-          Notificación
-        </button>
-
       </div>
     </div>
   );
